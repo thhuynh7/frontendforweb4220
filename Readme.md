@@ -22,3 +22,5 @@ Open the following URL in your web browser to view the app:
 http://localhost:3000
 ```
 Note: You need to log in with your Google Account to test all functionalities of the app.
+
+--end--
