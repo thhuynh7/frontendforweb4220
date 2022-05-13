@@ -1,35 +1,35 @@
-import React, { useState } from "react"
-import { Menu } from "antd"
-import { AppstoreOutlined, SettingOutlined, UserOutlined, UserAddOutlined, LogoutOutlined, ShoppingOutlined } from "@ant-design/icons"
-import { Link } from "react-router-dom"
-import firebase from "firebase"
-import { useDispatch, useSelector } from "react-redux"
-import { useHistory } from "react-router-dom"
-import Search from "../forms/Search"
+import React, { useState } from 'react';
+import { Menu } from 'antd';
+import { AppstoreOutlined, SettingOutlined, UserOutlined, UserAddOutlined, LogoutOutlined, ShoppingOutlined } from '@ant-design/icons';
+import { Link } from 'react-router-dom';
+import firebase from 'firebase';
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import Search from '../forms/Search';
 
-const { SubMenu, Item } = Menu
+const { SubMenu, Item } = Menu;
 
 const Header = () => {
-  const [current, setCurrent] = useState("home")
+  const [current, setCurrent] = useState('home');
 
-  let dispatch = useDispatch()
-  let { user } = useSelector(state => ({ ...state }))
+  let dispatch = useDispatch();
+  let { user } = useSelector(state => ({ ...state }));
 
-  let history = useHistory()
+  let history = useHistory();
 
   const handleClick = e => {
     // console.log(e.key);
-    setCurrent(e.key)
-  }
+    setCurrent(e.key);
+  };
 
   const logout = () => {
-    firebase.auth().signOut()
+    firebase.auth().signOut();
     dispatch({
-      type: "LOGOUT",
+      type: 'LOGOUT',
       payload: null
-    })
-    history.push("/login")
-  }
+    });
+    history.push('/login');
+  };
 
   return (
     <Menu onClick={handleClick} selectedKeys={[current]} mode="horizontal">
@@ -42,7 +42,7 @@ const Header = () => {
       </Item>
 
       <Item>
-        <h5>Shopmart</h5>
+        <h5>thaiios</h5>
       </Item>
 
       {!user && (
@@ -58,14 +58,14 @@ const Header = () => {
       )}
 
       {user && (
-        <SubMenu icon={<SettingOutlined />} title={user.email && user.email.split("@")[0]} className="float-right">
-          {user && user.role === "subscriber" && (
+        <SubMenu icon={<SettingOutlined />} title={user.email && user.email.split('@')[0]} className="float-right">
+          {user && user.role === 'subscriber' && (
             <Item>
               <Link to="/user/history">Dashboard</Link>
             </Item>
           )}
 
-          {user && user.role === "admin" && (
+          {user && user.role === 'admin' && (
             <Item>
               <Link to="/admin/dashboard">Dashboard</Link>
             </Item>
@@ -81,7 +81,7 @@ const Header = () => {
         <Search />
       </span>
     </Menu>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

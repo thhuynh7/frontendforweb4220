@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react';
 
 const Footer = () => {
   return (
@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="row">
           {/* Column1 */}
           <div className="col">
-            <h4>SHOPMART</h4>
+            <h4>thaiios</h4>
             <h6 className="list-unstyled">
               <li>416-420-4444</li>
               <li>1800 Yonge St</li>
@@ -16,7 +16,7 @@ const Footer = () => {
           </div>
           {/* Column2 */}
           <div className="col">
-            <h4>Shopmart Payment Products</h4>
+            <h4>thaiios Payment Products</h4>
             <ui className="list-unstyled">
               <li>Shop with Points</li>
               <li>Reload Your Balance</li>
@@ -35,11 +35,11 @@ const Footer = () => {
         </div>
         <hr />
         <div className="row">
-          <p className="text-center col-sm">&copy;{new Date().getFullYear()} SHOPMART | All rights reserved | Terms Of Service | Privacy</p>
+          <p className="text-center col-sm">&copy;{new Date().getFullYear()} thaiios | All rights reserved | Terms Of Service | Privacy</p>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
